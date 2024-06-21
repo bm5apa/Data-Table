@@ -1,3 +1,93 @@
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* navigation */
+.nav {
+  background-color: #1e1c88;
+  width: 100px;
+  height: 100%;
+}
+
+/* main-app */
+#main-app {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+/* main-content */
+#main-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f7f2;
+  flex: 1;
+  height: 100%;
+}
+
+/* title */
+.title {
+  font-size: 3rem;
+  padding: 20px 20px 0px 55px;
+}
+
+/* table */
+.table-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  height: 100px;
+}
+.table-container table {
+  border-collapse: collapse;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 90%;
+  margin: 20px;
+  font-size: 0.7rem;
+}
+.table-container table .table-group {
+  margin: 3px;
+  color: #696969;
+  font-weight: 300;
+}
+.table-container table thead {
+  margin-right: 6px;
+  margin-left: 6px;
+  background-color: #bebebe;
+}
+.table-container table tbody {
+  overflow-y: scroll;
+}
+.table-container table th {
+  width: 120px;
+  border-style: none;
+}
+.table-container table .table-white {
+  background-color: #f6f7f2;
+}
+.table-container table .table-gray {
+  background-color: #e4e4e4;
+}
+
+.scrollbar {
+  padding-left: 6px;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
 
 /*# sourceMappingURL=style.css.map */

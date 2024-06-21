@@ -1,4 +1,4 @@
-<div class="main-app">
+<div id="main-app">
 
 {{!-- navigator --}}
 <nav>
@@ -8,22 +8,185 @@
 </nav>
 
 
-<main class="main-cotent">
+<main id="main-content">
 
 {{!-- title --}}
 <div class="title">Campaign</div>
 
-
 {{!-- table --}}
 <div class="table-container">
-<table>
+<table class="table">
+  <thead>
   <tr class="table-header">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">ID</th>
+    <th class="table-name">Name</th>
+    <th class="table-advertiser">Advertiser <p class="table-group">Group</p></th>
+    <th class="table-description">Description</th>
+    <th class="table-price">Price</th>
+    <th class="table-starttime">Start Time</th>
+    <th class="table-endtime">End Time</th>
+    <th class="table-action">Action</th>
   </tr>
-  <tr>part1</tr>
-  <tr>part2</tr>
-  <tr>part3</tr>
+  </thead>
+  <tbody class="scrollbar">
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p></th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-gray">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-gray">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-gray">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-gray">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>    
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-gray">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-gray">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  <tr class="table-white">
+    <th class="checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-id">1</th>
+    <th class="table-name">Christmas 2020</th>
+    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
+    </th>
+    <th class="table-description">holiday night during ch...</th>
+    <th class="table-price">$2000</th>
+    <th class="table-starttime">2020/12/24 19:30</th>
+    <th class="table-endtime">2021/01/02 23:00</th>
+    <th class="table-action">Action</th>
+  </tr>
+  </tbody>
 </table>
 </div>
-
 </main>
 </div>
