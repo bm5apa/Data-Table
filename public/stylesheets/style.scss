@@ -1,5 +1,5 @@
 // basic setting
-$dark-blue: #1e1c88;
+$dark-blue: #1a1963;
 $main-white: #f6f7f2;
 $title-gray: #bebebe;
 $table-gray: #e4e4e4;
@@ -24,6 +24,19 @@ body {
   background-color: $dark-blue;
   width: 100px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .navicon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  & img.checked {
+    background-color: $main-white;
+  }
 }
 
 /* main-app */
@@ -66,23 +79,69 @@ body {
     width: 90%;
     margin: 20px;
     font-size: 0.7rem;
+    border-style: none;
+    th {
+      padding: 5px;
+      margin: 5px;
+      p {
+      margin: 0px;
+      padding: 0px;
+      padding-bottom: 15px;
+      }
+    }
+    .table-checkbox {
+      width: 50px;
+    }    
+    .table-id {
+      width: 50px;
+    }  
+    .table-advertiser,
+    .table-description,
+    .table-price {
+      width: 15%;
+    }
+    .table-name{
+    width: 12%;
+    }
+    .table-starttime,
+    .table-endtime {
+      width: 15%;
+    }
     .table-group {
       margin: 3px;
       color: $font-gray;
+      padding: 0px;
       font-weight: 300;
+      }
+    .table-description {
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      }
+     .table-action,
+     .table-price {
+      width: 100px;
     }
+    .table-price p::after,
+    .table-starttime p::after,
+    .table-endtime p::after {
+          content: url("https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/sort.svg");
+          width: 20px;
+          height: 20px;
+          position: relative;
+          top: 8px;
+          left: 20px;
+          z-index: 99;
+        }
     thead {
       margin-right: 6px;
       margin-left: 6px;
       background-color: $title-gray;
+      position: relative;
     }
     tbody {
       overflow-y: scroll;
     }
-    th {
-      width: 120px;
-      border-style: none;
-    }
+
     .table-white {
       background-color: $main-white;
     }
@@ -91,6 +150,12 @@ body {
     }
   }
 }
+
+//checkbox
+
+
+
+// scrollbar
 
 .scrollbar {
   padding-left: 6px;
@@ -102,4 +167,53 @@ body {
   &::-webkit-scrollbar-thumb {
     border-radius: 3px;
   }
+}
+
+// hamburger
+
+.nav-action {
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  position: static;
+  height: 25px;
+  width: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.hamburger {
+  width: 25px;
+  height: 2px;
+  background: black;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 25px;
+  height: 2px;
+  left: 30px;
+  background: black;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.hamburger::before {
+  top: 8px;
+}
+
+.hamburger::after {
+  bottom: 8px;
 }

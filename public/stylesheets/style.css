@@ -13,9 +13,22 @@ body {
 
 /* navigation */
 .nav {
-  background-color: #1e1c88;
+  background-color: #1a1963;
   width: 100px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav .navicon {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+.nav img.checked {
+  background-color: #f6f7f2;
 }
 
 /* main-app */
@@ -55,23 +68,68 @@ body {
   width: 90%;
   margin: 20px;
   font-size: 0.7rem;
+  border-style: none;
+}
+.table-container table th {
+  padding: 5px;
+  margin: 5px;
+}
+.table-container table th p {
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 15px;
+}
+.table-container table .table-checkbox {
+  width: 50px;
+}
+.table-container table .table-id {
+  width: 50px;
+}
+.table-container table .table-advertiser,
+.table-container table .table-description,
+.table-container table .table-price {
+  width: 15%;
+}
+.table-container table .table-name {
+  width: 12%;
+}
+.table-container table .table-starttime,
+.table-container table .table-endtime {
+  width: 15%;
 }
 .table-container table .table-group {
   margin: 3px;
   color: #696969;
+  padding: 0px;
   font-weight: 300;
+}
+.table-container table .table-description {
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+.table-container table .table-action,
+.table-container table .table-price {
+  width: 100px;
+}
+.table-container table .table-price p::after,
+.table-container table .table-starttime p::after,
+.table-container table .table-endtime p::after {
+  content: url("https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/sort.svg");
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 8px;
+  left: 20px;
+  z-index: 99;
 }
 .table-container table thead {
   margin-right: 6px;
   margin-left: 6px;
   background-color: #bebebe;
+  position: relative;
 }
 .table-container table tbody {
   overflow-y: scroll;
-}
-.table-container table th {
-  width: 120px;
-  border-style: none;
 }
 .table-container table .table-white {
   background-color: #f6f7f2;
@@ -88,6 +146,53 @@ body {
 }
 .scrollbar::-webkit-scrollbar-thumb {
   border-radius: 3px;
+}
+
+.nav-action {
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  position: static;
+  height: 25px;
+  width: 50px;
+}
+.nav-action:hover {
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 25px;
+  height: 2px;
+  background: black;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 25px;
+  height: 2px;
+  left: 30px;
+  background: black;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.hamburger::before {
+  top: 8px;
+}
+
+.hamburger::after {
+  bottom: 8px;
 }
 
 /*# sourceMappingURL=style.css.map */
