@@ -14,6 +14,8 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
+    synchronizeCheckboxes();
+
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.addEventListener('change', event => {
         const checkboxState = {
@@ -29,7 +31,9 @@
           body: JSON.stringify(checkboxState)
         })
           .then(response => {
-            console.log(response); 
+            if (!response.ok) {
+              throw new Error('錯誤');
+            }
             return response.json();
           })
           .then(data => {
@@ -40,31 +44,39 @@
       });
     });
   });
-  
-  function updateTableRow(id, isChecked) {
-    const tr = document.getElementById(id).closest('tr');
-    const tbodyTr = document.querySelectorAll('tbody tr');
 
-    if (tr.closest('thead')) {
-      tbodyTr.forEach(row => {
-        if (!row.closest('thead')) {
-          if (isChecked) {
-            row.classList.add('table-orange');
-            row.classList.remove('table-gray', 'table-white');
-          } else {
-            row.classList.remove('table-orange');
-            const index = parseInt(row.querySelector('.table-id').textContent) - 1;
-            const isOdd = index % 2 === 0;
-            if (isOdd) {
-              row.classList.add('table-gray');
-              row.classList.remove('table-white');
-            } else {
-              row.classList.add('table-white');
-              row.classList.remove('table-gray');
-            }
-          }
+  function synchronizeCheckboxes() {
+    const headerCheckbox = document.getElementById('checkbox-all');
+    const isChecked = headerCheckbox.checked;
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = isChecked;
+    });
+
+    if (isChecked) {
+      document.querySelectorAll('tbody tr').forEach(row => {
+        row.classList.remove('table-gray', 'table-white');
+        row.classList.add('table-orange');
+      });
+    } else {
+      document.querySelectorAll('tbody tr').forEach(row => {
+        const index = parseInt(row.querySelector('.table-id').textContent) - 1;
+        const isOdd = index % 2 === 0;
+        row.classList.remove('table-orange');
+        if (isOdd) {
+          row.classList.add('table-gray');
+        } else {
+          row.classList.add('table-white');
         }
       });
+    }
+  }
+
+  function updateTableRow(id, isChecked) {
+    const tr = document.getElementById(id).closest('tr');
+
+    if (tr.closest('thead')) {
+      synchronizeCheckboxes();
     } else if (tr.closest('tbody')) {
       if (isChecked) {
         tr.classList.add('table-orange');
@@ -72,14 +84,12 @@
       } else {
         const index = parseInt(tr.querySelector('.table-id').textContent) - 1;
         const isOdd = index % 2 === 0;
+        tr.classList.remove('table-orange');
         if (isOdd) {
-          tr.classList.remove('table-white');
           tr.classList.add('table-gray');
         } else {
-          tr.classList.remove('table-gray');
           tr.classList.add('table-white');
         }
-        tr.classList.remove('table-orange');
       }
     }
   }
