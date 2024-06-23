@@ -15,7 +15,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', (event) => {
     synchronizeCheckboxes();
-
     document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
       checkbox.addEventListener('change', event => {
         const checkboxState = {
@@ -39,6 +38,7 @@
           .then(data => {
             console.log(data);
             updateTableRow(event.target.id, event.target.checked);
+            updateSideNav();
           })
           .catch(error => console.error('錯誤：', error));
       });
@@ -74,7 +74,6 @@
 
   function updateTableRow(id, isChecked) {
     const tr = document.getElementById(id).closest('tr');
-
     if (tr.closest('thead')) {
       synchronizeCheckboxes();
     } else if (tr.closest('tbody')) {
@@ -93,6 +92,24 @@
       }
     }
   }
+  
+  document.querySelectorAll('nav img').forEach(img => {
+    img.addEventListener('click', (event) => {
+      handleNavClicked(event.target);
+    });
+  });
+  
+  function handleNavClicked(target) {
+    const img = document.querySelectorAll('nav img')
+     img.forEach(imgObj => {
+      if (imgObj === target) {
+        imgObj.classList.add('checked')
+      } else if (imgObj !== target) {
+        imgObj.classList.remove('checked')
+      }
+    });
+  }
+
 </script>
 
 </html>

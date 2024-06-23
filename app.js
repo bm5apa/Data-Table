@@ -32,7 +32,6 @@ app.get('/', (req, res) => {
 
 app.post('/checkbox', (req, res) => {
   const { id, checked } = req.body;
-  //console.log(`Checkbox ${id} is now ${checked ? 'checked' : 'unchecked'}`);
   checkboxStates = checkboxStates.map(checkbox => {
     if (checkbox.id === id) {
       return { ...checkbox, checked };
@@ -63,7 +62,7 @@ Handlebars.registerHelper('addOrange', function(checked) {
   return checked ? 'table-orange' : '';
 });
 
-// table duplicate
+//table duplicate
 
 
-// side-nav white-background
+
