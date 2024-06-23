@@ -3,6 +3,7 @@ $dark-blue: #1a1963;
 $main-white: #f6f7f2;
 $title-gray: #bebebe;
 $table-gray: #e4e4e4;
+$table-orange: #d7792c;
 $font-gray: #696969;
 
 html {
@@ -148,12 +149,11 @@ body {
     .table-gray {
       background-color: $table-gray;
     }
+    .table-orange {
+     background-color: $table-orange;
+    }
   }
 }
-
-//checkbox
-
-
 
 // scrollbar
 

@@ -3,7 +3,7 @@
 {{!-- navigator --}}
 <nav>
 <div class="nav">
-<img src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg" width="100" height="100" class="nav-logo" alt="nav-logo">
+<a href="/"><img src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/logo.svg" width="100" height="100" class="nav-logo" alt="nav-logo"></a>
 <img src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/frame.svg"
   width="100" height="100" class="navicon nav-frame checked" alt="nav-frame">
 <img src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/folder.svg"
@@ -26,7 +26,7 @@
 <table class="table">
   <thead>
   <tr class="table-header">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
+    <th class="table-checkbox"><input type="checkbox" id="checkbox-all" name="checkbox-all" value="checkbox0" /></th>
     <th class="table-id">ID</th>
     <th class="table-name">Name</th>
     <th class="table-advertiser">Advertiser <p class="table-group">Group</p></th>
@@ -38,9 +38,10 @@
   </tr>
   </thead>
   <tbody class="scrollbar">
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
+    {{#each checkboxes}}
+<tr class="{{oddOrEven @index}} {{#if checked}}table-orange{{else}}{{addOrange checked}}{{/if}}">
+    <th class="table-checkbox"><input type="checkbox" id="{{this.id}}" name="checkbox" value="{{this.value}}"/></th>
+    <th class="table-id">{{inc @index}}</th>
     <th class="table-name">Christmas 2020</th>
     <th class="table-advertiser">Food Market<p class="table-group">Krab</p></th>
     <th class="table-description">holiday night during ch...</th>
@@ -51,174 +52,7 @@
       <span class="hamburger"></span>
     </label></th>
   </tr>
-  <tr class="table-gray">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-gray">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-gray">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-gray">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>    
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-gray">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-gray">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
-  <tr class="table-white">
-    <th class="table-checkbox"><input type="checkbox" id="checkbox" name="checkbox" /></th>
-    <th class="table-id">1</th>
-    <th class="table-name">Christmas 2020</th>
-    <th class="table-advertiser">Food Market<p class="table-group">Krab</p>
-    </th>
-    <th class="table-description">holiday night during ch...</th>
-    <th class="table-price">$2000</th>
-    <th class="table-starttime">2020/12/24 19:30</th>
-    <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
-      <span class="hamburger"></span>
-    </label></th>
-  </tr>
+      {{/each}}
   </tbody>
 </table>
 </div>

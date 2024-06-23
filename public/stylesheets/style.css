@@ -137,6 +137,9 @@ body {
 .table-container table .table-gray {
   background-color: #e4e4e4;
 }
+.table-container table .table-orange {
+  background-color: #d7792c;
+}
 
 .scrollbar {
   padding-left: 6px;
