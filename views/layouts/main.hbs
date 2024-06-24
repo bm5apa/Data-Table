@@ -38,7 +38,6 @@
           .then(data => {
             console.log(data);
             updateTableRow(event.target.id, event.target.checked);
-            updateSideNav();
           })
           .catch(error => console.error('錯誤：', error));
       });
@@ -98,7 +97,7 @@
       handleNavClicked(event.target);
     });
   });
-  
+
   function handleNavClicked(target) {
     const img = document.querySelectorAll('nav img')
      img.forEach(imgObj => {
@@ -109,6 +108,35 @@
       }
     });
   }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.nav-action').forEach(navaction => {
+      navaction.addEventListener('click', (event) => {
+        event.stopPropagation();
+        handleHamburgerClicked(navaction);
+      });
+    });
+
+    function handleHamburgerClicked(target) {
+      const navActions = document.querySelectorAll('.nav-action');
+      navActions.forEach(navAction => {
+        const popupContainer = navAction.querySelector('.popup-container');
+        if (navAction === target) {
+          popupContainer.classList.toggle('activated');
+        } else {
+          popupContainer.classList.remove('activated');
+        }
+      });
+    }
+
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.popup-container').forEach(popup => {
+        popup.classList.remove('activated');
+      });
+    });
+  });
+
+
 
 </script>
 

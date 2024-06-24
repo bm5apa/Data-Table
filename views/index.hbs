@@ -48,13 +48,32 @@
     <th class="table-price">$2000</th>
     <th class="table-starttime">2020/12/24 19:30</th>
     <th class="table-endtime">2021/01/02 23:00</th>
-    <th class="table-action"><label class="nav-action" for="navbar-toggle">
+    <th class="table-action"><div class="nav-action">
       <span class="hamburger"></span>
-    </label></th>
+        <div class="popup-container" id="popup{{inc @index}}">
+        <div class="popup-section duplicate">
+          <img src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/duplicate.svg" width="15" height="15" class="popup-icon" id="popup-duplicate" alt="popup-duplicate"><p>Duplicate</p>
+          </div>
+        <div class="popup-section edit">
+          <img
+            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/edit.svg"
+            width="15" height="15" class="popup-icon" id="popup-edit" alt="popup-edit">
+          <p>Edit</p>
+        </div>
+        <div class="popup-section delete">
+          <img
+            src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/delete.svg"
+            width="15" height="15" class="popup-icon" id="popup-delete" alt="popup-delete">
+          <p>Delete</p>
+        </div>
+      </div>
+    </div>
+    </th>
   </tr>
       {{/each}}
   </tbody>
 </table>
 </div>
+
 </main>
 </div>

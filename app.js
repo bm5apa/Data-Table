@@ -47,9 +47,9 @@ app.listen(port, () => {
 })
 
 // --table controller
+const Handlebars = require('handlebars');
 
 // index start from 1
-const Handlebars = require('handlebars');
 Handlebars.registerHelper('inc', function(value) {
   return parseInt(value) + 1;
 });
@@ -62,7 +62,6 @@ Handlebars.registerHelper('addOrange', function(checked) {
   return checked ? 'table-orange' : '';
 });
 
-//table duplicate
 
 
 
