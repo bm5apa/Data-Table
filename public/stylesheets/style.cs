@@ -165,38 +165,14 @@ body {
 .nav-action:hover {
   cursor: pointer;
 }
-.nav-action .hamburger {
+
+.hamburger {
   width: 25px;
   height: 2px;
   position: relative;
   background: black;
 }
-.nav-action .hamburger,
-.nav-action .hamburger::before,
-.nav-action .hamburger::after {
-  width: 25px;
-  height: 2px;
-  top: 14px;
-  left: 10px;
-  background: black;
-}
-.nav-action .hamburger::before,
-.nav-action .hamburger::after {
-  position: absolute;
-  left: 0;
-  content: "";
-}
-.nav-action .hamburger::before {
-  top: 8px;
-}
-.nav-action .hamburger::after {
-  bottom: 8px;
-}
-.nav-action .popup-section {
-  display: none;
-}
-
-.activated {
+.hamburger .popup-container .activated {
   position: absolute;
   right: 10px;
   top: -5px;
@@ -205,23 +181,32 @@ body {
   border: 1px solid #e4e4e4;
   background-color: #f6f7f2;
   z-index: 99;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-}
-.activated .popup-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 30%;
-}
-.activated .popup-section p {
-  padding: 12px;
-}
-.activated .popup-section img {
-  padding-left: 10px;
 }
 
-/*# sourceMappingURL=style.css.map */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 25px;
+  height: 2px;
+  top: 14px;
+  left: 10px;
+  background: black;
+}
+
+.hamburger::before,
+.hamburger::after {
+  position: absolute;
+  left: 0;
+  content: "";
+}
+
+.hamburger::before {
+  top: 8px;
+}
+
+.hamburger::after {
+  bottom: 8px;
+}
+
+/*# sourceMappingURL=style.cs.map */
+

@@ -122,6 +122,9 @@ body {
      .table-price {
       width: 100px;
     }
+     .table-action {
+       position: relative;
+    }
     .table-price p::after,
     .table-starttime p::after,
     .table-endtime p::after {
@@ -175,45 +178,74 @@ body {
   top: 0;
   bottom: 0;
   display: flex;
-  align-items: center;
-  position: static;
-  height: 25px;
-  width: 50px;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.hamburger {
-  width: 25px;
-  height: 2px;
-  background: black;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  width: 25px;
-  height: 2px;
-  left: 30px;
-  background: black;
-}
-
-.hamburger {
-  position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
   position: absolute;
-  left: 0;
-  content: "";
+  height: 35px;
+  width: 40px;
+    &:hover {
+        cursor: pointer;
+      }
+    .hamburger {
+    width: 25px;
+    height: 2px;
+    position: relative;
+    background: black;
+ }
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+      width: 25px;
+      height: 2px;
+      top: 14px;
+      left: 10px;
+      background: black;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      position: absolute;
+      left: 0;
+      content: "";
+    }
+
+    .hamburger::before {
+      top: 8px;
+    }
+
+    .hamburger::after {
+      bottom: 8px;
+    }
+    .popup-section {
+      display: none;
+    }
 }
 
-.hamburger::before {
-  top: 8px;
-}
+.activated {
+   position: absolute;
+   right: 10px;
+   top: -5px;
+   width: 100px;
+   height: 120px;
+   border: 1px solid $table-gray;
+   background-color: $main-white;
+   z-index: 99;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+  & .popup-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      height: 30%;
+        & p {
+            padding: 12px;
+          }
+        & img {
+          padding-left: 10px;
+        }
+    }
+  
 
-.hamburger::after {
-  bottom: 8px;
-}
+ }
+
